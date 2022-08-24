@@ -19,6 +19,24 @@
     <link href="{{asset('plugins/apex/apexcharts.css')}}" rel="stylesheet" type="text/css">
     <link href="{{asset('assets/css/dashboard/dash_1.css')}}" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS/CUSTOM STYLES -->
+    <!--Table css -->
+    <link href="{{asset('assets/css/tables/table-basic.css')}}" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/datatables.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/table/datatable/dt-global_style.css')}}">
+    <!-- END Table-->
+
+    <!-- css3SIS -->
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/dataTable3SIS.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css3SIS/button3SIS.css')}}">
+      <!-- <link href="{{asset('assets/css/main.css')}}" rel="stylesheet" type="text/css" /> -->
+    <!-- END css3SIS -->
+
+    <!--  BEGIN CUSTOM STYLE FILE  -->
+    <link href="{{asset('assets/css/scrollspyNav.css')}}" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="{{asset('plugins/select2/select2.min.css')}}">
+    <!--  END CUSTOM STYLE FILE  -->
+
 
 </head>
 <body>
@@ -55,36 +73,7 @@
     <script src="{{asset('bootstrap/js/bootstrap.min.js')}}"></script>
     <script src="{{asset('plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('assets/js/app.js')}}"></script>
-    <script>
-        $(document).ready(function() {
-            App.init();
 
-            let current_route = '<?php echo Request::path()?>';
-            console.log(current_route);
-if(current_route != ''){
-
-        $.ajax({
-                type : 'post',
-                url : "{{url('current_url')}}",
-                data:{'current_url':current_route},
-                success:function(response){
-                 console.log(response.status);
-
-                 if(response.status == 'success'){
-                    console.log(response.data);
-                    // current_url
-
-                    $('#current_url').html(response.data);
-                 }else{
-                    // alert("current_url not found ?");
-                    return false;
-                 }
-                }
-            });
-
-    }
-});
-    </script>
     <script src="{{asset('assets/js/custom.js')}}"></script>
     <!-- END GLOBAL MANDATORY SCRIPTS -->
 
@@ -93,35 +82,55 @@ if(current_route != ''){
     <script src="{{asset('assets/js/dashboard/dash_1.js')}}"></script>
     <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS -->
 
+    <!-- BEGIN DataTable -->
+    <script src="{{asset('plugins/table/datatable/datatables.js')}}"></script>
 
-    <script type="text/javascript">
-        
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
+    <script src="{{asset('plugins/select2/select2.min.js')}}"></script>
+    <!-- <script src="{{asset('plugins/select2/custom-select2.js')}}"></script> -->
+    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+
+    <script>
+        $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+            App.init();
+            let current_route = '<?php echo Request::path()?>';
+            console.log(current_route);
+            if(current_route != ''){
 
-        function fastpath(_this){
-            // console.log(_this.value);
-                $.ajax({
-                type : 'get',
-                url : "{{url('fastpath')}}",
-                data:{'search':_this.value},
-                success:function(response){
-                 console.log(response.status);
+            $.ajax({
+                    type : 'post',
+                    url : "{{url('current_url')}}",
+                    data:{'current_url':current_route},
+                    success:function(response){
+                     console.log(response.status);
 
-                 if(response.status == 'success'){
-                    console.log(response.redirect_url);
-                    window.location = response.redirect_url;
-                 }else{
-                    alert("FastPath not found ?");
-                    return false;
-                 }
-                }
+                     if(response.status == 'success'){
+                        console.log(response.data);
+                        // current_url
+
+                        $('#current_url').html(response.data);
+                     }else{
+                        // alert("current_url not found ?");
+                        return false;
+                     }
+                    }
                 });
-        }
+    }
+});
     </script>
 
+ @yield('js_code')
+
+    <script type="text/javascript">
+        $('#add_Data').click(function () {
+            $('#entryModalSmall').modal('show');
+        });
+    </script>  
 </body>
 </html>

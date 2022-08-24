@@ -65,4 +65,10 @@ class DashboardController extends Controller
        }
 
     }
+
+      public function test()
+   {
+        $menu = $this->menu();
+        return view('test',compact('menu'));
+    }
 }

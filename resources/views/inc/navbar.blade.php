@@ -161,7 +161,7 @@
                 </li>
                 <li class="nav-item dropdown user-profile-dropdown">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="userProfileDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                        <img src="assets/img/profile-16.jpeg" alt="avatar">
+                        <img src="{{asset('assets/img/profile-15.jpeg')}}" alt="avatar">
                     </a>
                     <div class="dropdown-menu position-absolute" aria-labelledby="userProfileDropdown">
                         <div class="">
@@ -227,3 +227,26 @@
         </header>
     </div>
     <!--  END NAVBAR  -->
+      @section('js_code')
+    <script type="text/javascript">
+        function fastpath(_this){
+            // console.log(_this.value);
+                $.ajax({
+                type : 'get',
+                url : "{{url('fastpath')}}",
+                data:{'search':_this.value},
+                success:function(response){
+                 console.log(response.status);
+
+                 if(response.status == 'success'){
+                    console.log(response.redirect_url);
+                    window.location = response.redirect_url;
+                 }else{
+                    alert("FastPath not found ?");
+                    return false;
+                 }
+                }
+                });
+        }
+    </script>
+    @endsection
