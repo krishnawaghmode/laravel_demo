@@ -33,12 +33,12 @@ class DashboardController extends Controller
         return view('systemmaster',compact('menu'));
     }
 
-    public function FastPath(Request $request)
+    public function MNFastPath(Request $request)
     {
-        $fastpath=DB::table('t92')->where('fastpath' ,$request->search)->value('route');
+        $MNFastPath=DB::table('t92')->where('MNFastPath' ,$request->search)->value('MNRoute');
 
-        if($fastpath){
-            return response(['status'=>'success','redirect_url'=>url($fastpath)]);
+        if($MNFastPath){
+            return response(['status'=>'success','redirect_url'=>url($MNFastPath)]);
         }else{
             return response(['status'=>'error']);
 
@@ -50,7 +50,7 @@ class DashboardController extends Controller
 
         if($request->current_url != ''){
 
-        $current_url=DB::table('t92')->where('route' ,$request->current_url)->value('form_title');
+        $current_url=DB::table('t92')->where('MNRoute' ,$request->current_url)->value('MNFormHeadeding');
 
         if($current_url){
             return response(['status'=>'success','data'=>$current_url]);

@@ -35,6 +35,7 @@ class CompanyController extends Controller
     function BrowserData()
     {
         $BrowserDataTable = $this->gmcmBrowserDataTrait(); 
+        // dd($BrowserDataTable);
         return DataTables::of($BrowserDataTable)
         ->addColumn('action', function($company){
             return '<a href="#" class="btn mr-1 btnEditRec3SIS edit" id="'.$company->GMCOHUniqueId.'">Edit
@@ -54,8 +55,8 @@ class CompanyController extends Controller
         if($request->get('button_action') == 'insert')
         {
             $validator = Validator::make($request->all(), [
-                'GMCOHCompanyId'    =>  'required|min:2|max:10||unique:t05901l01,GMCOHCompanyId',
-                'currenyId'    => 'required',
+                'GMCOHCompanyId'    => 'required|min:2|max:10||unique:t05901l01,GMCOHCompanyId',
+                'currenyId'         => 'required',
                 'GMCOHDesc1'        => 'required|max:100',
                 'GMCOHDesc2'        => 'max:200',
                 'GMCOHBiDesc'       => 'max:100',
@@ -66,7 +67,7 @@ class CompanyController extends Controller
         {
             $validator = Validator::make($request->all(), [
                 'GMCOHCompanyId'    => 'required',
-                'currenyId'    => 'required',
+                'currenyId'         => 'required',
                 'GMCOHDesc1'        => 'required|max:100',
                 'GMCOHDesc2'        => 'max:200',
                 'GMCOHBiDesc'       => 'max:100',

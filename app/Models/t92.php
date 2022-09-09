@@ -17,7 +17,7 @@ class t92 extends Model
         $allCategories = t92::get();
 
 
-        $rootCategories = $allCategories->where('parent' ,'=', 0);
+        $rootCategories = $allCategories->where('MNParentCode' ,'=', 0);
 
         self::formatTree($rootCategories,$allCategories);
         return $rootCategories;
@@ -26,7 +26,7 @@ class t92 extends Model
     private static function formatTree($categories,$allCategories)
     {
         foreach ($categories as $category) {
-           $category->children = $allCategories->where('parent',$category->child);
+           $category->children = $allCategories->where('MNParentCode',$category->MNChildCode);
 
            if($category->children->isNotEmpty()){
              self::formatTree($category->children,$allCategories);
