@@ -29,6 +29,9 @@ Route::get('/table', function () {
 Route::get('/system/index', [DashboardController::class,'systemmaster']);
 
 
+Route::get('/new/index', [DashboardController::class,'tabform']);
+
+
 //Route for Company Master 3SIS
 Route::get('/company/index', [CompanyController::class, 'Index']);
 Route::GET('/company/Master',[CompanyController::class, 'BrowserData'])->name('company.browserData');

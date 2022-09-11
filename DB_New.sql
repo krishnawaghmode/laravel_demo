@@ -254,7 +254,7 @@ INSERT INTO `t92` (`id`,`MNCompId`,`MNSystemId`,`MNRootCode`,`MNParentCode`,`MNC
  (5,'',11,0,'91.00','9300.00','Common','','','Common','','',''),
  (6,'',11,0,'9100.00','9101.00','Company Master','CSM1','company/index1','Customize/Company Master','','',''),
  (7,'',11,0,'9100.00','9102.00','General','GEN','general/index','General Info','','',''),
- (8,'',11,0,'9102.00','9103.00','Salutation','','','Salutation Master','','',''),
+ (8,'',11,0,'9102.00','9103.00','Salutation','','new/index','Salutation Master','','',''),
  (9,'',11,0,'9102.00','9104.00','Gender Master','','','Gender Master','','',''),
  (10,'',11,0,'9300.00','9300.05','Company Master','CSM','company/index','Common/Company Master','','','');
 /*!40000 ALTER TABLE `t92` ENABLE KEYS */;

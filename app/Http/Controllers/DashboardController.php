@@ -66,9 +66,17 @@ class DashboardController extends Controller
 
     }
 
-      public function test()
+    public function test()
    {
         $menu = $this->menu();
         return view('test',compact('menu'));
     }
+
+     public function tabform()
+   {
+        $menu = $this->menu();
+        return view('tabform',compact('menu'));
+    }
+
+    
 }
