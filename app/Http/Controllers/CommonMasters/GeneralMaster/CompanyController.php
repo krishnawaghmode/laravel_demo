@@ -136,4 +136,17 @@ class CompanyController extends Controller
         return response()->json(['status'=>1, 'Id'=>$Id, 
         'Desc1'=>'', 'masterName'=>'Company ', 'updateMode'=>'Restored']); 
     } 
+
+    public function getcityStateDropDown(Request $request)
+   {
+        if(!empty($request->id)){
+          $res = [];
+          $city_date =  City::where('GMCTHUniqueId',$request->id)->first();
+          $res['stateId'] = $city_date['GMCTHStateId'];
+          $res['stateDesc1'] = $city_date['GMCTHDesc1'];
+          $res['countryId'] = $city_date['GMCTHCountryId'];
+          $res['countryDesc1'] =$city_date['GMCTHDesc2'];
+           return response()->json($res);
+        }
+    }
 }

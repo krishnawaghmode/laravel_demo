@@ -42,4 +42,5 @@ Route::GET('/company/Master1',[CompanyController::class, 'BrowserDeletedRecords'
 Route::GET('/company/Master/Undelete',[CompanyController::class, 'RestoreDeletedRecord'])->name('company.restoreDeletedRecords');
 Route::POST('/company/Master/getGeoDesc',[CompanyController::class, 'GetGeoDesc'])->name('company.getGeoDesc');
 
+Route::post('/city/dropdown',[CompanyController::class, 'getcityStateDropDown'])->name('dropDownMasters.getGeoDesc');
 //Route for Company Master 3SIS Ends

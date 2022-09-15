@@ -714,5 +714,20 @@
             });
 
      }); 
+
+$('#cityId').change(function(){
+            let id = $(this).val();
+            $.ajax({
+                url: "{{route('dropDownMasters.getGeoDesc')}}",
+                type:'post',
+                data:'id=' + id + '&_token={{csrf_token()}}',
+                success:function(response){
+                    $('#GMCOHStateId').val(response.stateId);
+                    $('#stateDesc1').val(response.stateDesc1);
+                    $('#GMCOHCountryId').val(response.countryId);
+                    $('#countryDesc1').val(response.countryDesc1);
+                }
+            })
+        });
 </script>
 @endsection
