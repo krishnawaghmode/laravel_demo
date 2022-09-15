@@ -14,6 +14,10 @@ use App\Traits\TablesSchema3SIS\tablesSchema3SIS;
 use App\Traits\CommonMasters\GeneralMaster\companyDbOperations;
 use App\Traits\GetDescriptions3SIS\getDescriptions3SIS;
 use App\Models\t92;
+use App\Models\CommonMasters\GeneralMaster\Currency;
+use App\Models\CommonMasters\GeographicInfo\City;
+use App\Models\CommonMasters\BankingMaster\BankName;
+use App\Models\CommonMasters\BankingMaster\BranchName;
 
 
 class CompanyController extends Controller
@@ -27,10 +31,16 @@ class CompanyController extends Controller
 
     function Index()
     { 
-        echo 'Data Submitted.11';
+        // echo 'Data Submitted.11';
         $data = $this->dataTableXLSchemaTrait();
         $menu = $this->menu();
-        return view('CommonMasters.GeneralMaster.company',compact('menu'))->with($data);
+
+        $currency_list = Currency::all();
+        $city_list = City::all();
+        $bank1_list = BankName::all();
+        $bank2_list = BranchName::all();
+
+        return view('CommonMasters.GeneralMaster.company',compact('menu','currency_list','city_list','bank1_list','bank2_list'))->with($data);
     }
     function BrowserData()
     {

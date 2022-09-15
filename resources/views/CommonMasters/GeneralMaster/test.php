@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-@section('css')
-<link href="{{asset('assets/css/components/tabs-accordian/custom-accordions.css')}}" rel="stylesheet" type="text/css" />
-@endsection
 <div class="layout-px-spacing">
     
     <div>
@@ -73,48 +70,13 @@
                         </div>
                     </div>
                 </div>
-               <div id='dataTableModalSmall' class='modal fade  register-modal' role='dialog' 
-                    aria-labelledby="registerModalLabel" aria-hidden="true" style='margin-top:40px' 
-                    data-backdrop="static">
-                    <div class='modal-dialog modal-dialog-centered modal-lg'role="document">
-                        <div class='modal-content'>                              
-                            <div class="modal-header" id="registerModalLabel">
-                                <h4 class="modal-title"></h4>
-                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
-                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
-                                    stroke-linecap="round" stroke-linejoin="round" 
-                                    class="feather feather-x text-danger"><line x1="18" y1="6" x2="6" y2="18">                                            
-                                    </line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
-                            </div>
-                            <!--CopyChange-->
-                                <div class='modal-body'>
-                                    <div class="container-fluid">
-                                            <div class="table-responsive">
-                                                <table id="html-extension3SIS" class="table table-hover non-hover" style="width:100%">
-                                                    <thead>
-                                                        <tr>                                                                
-                                                            <th title="Company Master">ID</th>
-                                                            <th>Company Name</th>
-                                                            <th>Desc1</th>
-                                                            <th>Action</th>
-                                                            <th style="visibility: hidden;">Unique Id</th>
-                                                        </tr>
-                                                    </thead>   
-                                                </table>
-                                            </div>
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- end undelete modal -->
                 <div id="entryModalSmall" class="modal fade UpdateModalBox3SIS" data-backdrop="static" 
                     data-keyboard="false" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered 3SISPro-modal-dialog modal-xl" role="document">
                         <div class='modal-content'>                              
                             <div class="modal-header" id="registerModalLabel">
-                                <h4 class="modal-title text-light">Master</h4>
+                                <h4 class="modal-title"></h4>
                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
                                     viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
@@ -127,19 +89,40 @@
                                     method="post" action="{{ route('company.postData') }}">
                                     <input type="hidden" name="_token" id="csrfToken" value="{{ csrf_token() }}">
                                     <div class="modal-body">
-                                    <div id="toggleAccordion">
-                                      <div class="card">
-                                        <div class="card-header" id="headingOne1">
-                                          <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionOne" aria-expanded="false" aria-controls="defaultAccordionOne">
-                                              General Info  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                                            </div>
-                                          </section>
-                                        </div>
-
-                                        <div id="defaultAccordionOne" class="collapse" aria-labelledby="headingOne1" data-parent="#toggleAccordion" style="">
-                                          <div class="card-body">
-                                                 <!-- Hidden Fields -->  
+                                    <div class="widget-content widget-content-area animated-underline-content">
+                                        <ul class="nav nav-tabs mb-3" id="animateLine" role="tablist">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="animated-underline-home-tab" data-toggle="tab" 
+                                                href="#animated-underline-home" role="tab" aria-controls="animated-underline-home" a
+                                                ria-selected="true">General Info</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="animated-underline-address-tab" data-toggle="tab" 
+                                                href="#animated-underline-address" role="tab" aria-controls="animated-underline-address" 
+                                                aria-selected="false">Address</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="animated-underline-banking-tab" data-toggle="tab" 
+                                                href="#animated-underline-banking" role="tab" aria-controls="animated-underline-banking" 
+                                                aria-selected="false">Banking Info</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="animated-underline-statutory-tab" data-toggle="tab" 
+                                                href="#animated-underline-statutory" role="tab" aria-controls="animated-underline-statutory" 
+                                                aria-selected="false">Statutory Info / Logo</a>
+                                            </li>                                                
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="animated-underline-profile-tab" data-toggle="tab" 
+                                                href="#animated-underline-profile" role="tab" aria-controls="animated-underline-profile" 
+                                                aria-selected="false">Record Info</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content" id="animateLineContent-4">
+                                            <!-- General Info -->
+                                            <div class="tab-pane fade show active" id="animated-underline-home" role="tabpanel" 
+                                                aria-labelledby="animated-underline-home-tab">
+                                                <div class="container-fluid">
+                                                    <!-- Hidden Fields -->  
                                                     <div class='form-group mb-0'>
                                                         <input type="hidden" name='GMCOHUniqueId' id='GMCOHUniqueId' 
                                                             class='form-control'>                                                  
@@ -208,9 +191,6 @@
                                                                     style='float:right;'></span>
                                                                 <select id='currenyId' name = 'currenyId' style='width: 100%;'>
                                                                     <option value=''>-- Select Currency Id --</option>
-                                                                    @foreach($currency_list as $currency)
-                                                                    <option value='{{$currency->GMCRHUniqueId}}'>{{$currency->GMCRHCurrencyId}}</option>
-                                                                    @endforeach
                                                                 </select>                                                
                                                             </div>
                                                         </div>
@@ -276,19 +256,11 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class="card">
-                                        <div class="card-header" id="headingTwo1">
-                                          <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionTwo" aria-expanded="false" aria-controls="defaultAccordionTwo">
-                                              Address  <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+                                                </div>
                                             </div>
-                                          </section>
-                                        </div>
-                                        <div id="defaultAccordionTwo" class="collapse" aria-labelledby="headingTwo1" data-parent="#toggleAccordion" style="">
-                                            <div class="card-body">
+                                            <!-- Address Info -->
+                                            <div class="tab-pane fade" id="animated-underline-address" role="tabpanel" 
+                                                aria-labelledby="animated-underline-address-tab">                                                    
                                                 <div class="media">
                                                     <div class="media-body">
                                                         <!-- Address1, 2, 3 -->
@@ -314,9 +286,6 @@
                                                                         style='float:right;'></span>
                                                                     <select id='cityId' name = 'cityId' style='width: 100%;'>
                                                                         <option value=''>-- Select City Id --</option>
-                                                                        @foreach($city_list as $city)
-                                                                    <option value='{{$city->GMCTHUniqueId}}'>{{$city->GMCTHDesc1}}</option>
-                                                                    @endforeach
                                                                     </select>                                                
                                                                 </div>
                                                             </div>
@@ -347,19 +316,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                      </div>
-                                      <div class="card">
-                                        <div class="card-header" id="headingThree1">
-                                          <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionThree" aria-expanded="false" aria-controls="defaultAccordionThree">
-                                              Banking Info <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
-                                            </div>
-                                          </section>
-                                        </div>
-                                        <div id="defaultAccordionThree" class="collapse" aria-labelledby="headingThree1" data-parent="#toggleAccordion" style="">
-                                          <div class="card-body">
-                                            <div class="media">
+                                            <!-- Banking Info -->
+                                            <div class="tab-pane fade" id="animated-underline-banking" role="tabpanel" 
+                                                aria-labelledby="animated-underline-banking-tab">                                                    
+                                                <div class="media">
                                                     <div class="media-body">
                                                         <div class='row'>
                                                             <!-- Banking 1 -->
@@ -377,9 +337,6 @@
                                                                             <label style='color:#ffc107'>Branch</label>
                                                                             <select id='branchId1' name = 'branchId1' style='width: 100%;'>
                                                                                 <option value=''>-- Select Branch --</option>
-                                                                                 @foreach($bank1_list as $bank1)
-                                                                                <option value='{{$bank1->BMBNHUniqueId}}'>{{$bank1->BMBNHDesc1}}</option>
-                                                                                @endforeach
                                                                             </select>                                                
                                                                         </div>
                                                                     </div>
@@ -433,9 +390,6 @@
                                                                             <label style='color:#20c997'>Branch</label>
                                                                             <select id='branchId2' name = 'branchId2' style='width: 100%;'>
                                                                                 <option value=''>-- Select Branch --</option>
-                                                                                 @foreach($bank2_list as $bank2)
-                                                                                <option value='{{$bank2->BMBRHUniqueId}}'>{{$bank2->BMBRHDesc1}}</option>
-                                                                                @endforeach
                                                                             </select>                                                
                                                                         </div>
                                                                     </div>
@@ -478,21 +432,11 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                      <div class="card">
-                                        <div class="card-header" id="headingfour1">
-                                          <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionfour" aria-expanded="false" aria-controls="defaultAccordionfour">
-                                              Statutory Info / Logo <div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                             </div>
-                                          </section>
-                                        </div>
-                                        <div id="defaultAccordionfour" class="collapse" aria-labelledby="headingThree1" data-parent="#toggleAccordion" style="">
-                                          <div class="card-body">
-                                            <div class="media">
+                                            <!-- Statutoty Info and Image-->
+                                            <div class="tab-pane fade" id="animated-underline-statutory" role="tabpanel" 
+                                                aria-labelledby="animated-underline-statutory-tab">
+                                                <div class="media">
                                                     <div class="media-body">
                                                         <!-- PAN and GST -->
                                                         <div class="row mt-0">
@@ -547,21 +491,11 @@
                                                         </div>                                                            
                                                     </div>
                                                 </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-                                        <div class="card">
-                                        <div class="card-header" id="headingfive1">
-                                          <section class="mb-0 mt-0">
-                                            <div role="menu" class="collapsed" data-toggle="collapse" data-target="#defaultAccordionfive" aria-expanded="false" aria-controls="defaultAccordionfive">
-                                              Record Info<div class="icons"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
                                             </div>
-                                          </section>
-                                        </div>
-                                        <div id="defaultAccordionfive" class="collapse" aria-labelledby="headingThree1" data-parent="#toggleAccordion" style="">
-                                          <div class="card-body">
-                                            <div class="media">
+                                            <!-- User Info -->
+                                            <div class="tab-pane fade" id="animated-underline-profile" role="tabpanel" 
+                                                aria-labelledby="animated-underline-profile-tab">
+                                                <div class="media">
                                                     <div class="media-body">
                                                         <div class="form-group">
                                                             <label> User</label>
@@ -580,11 +514,8 @@
                                                         </div>                                                        
                                                     </div>
                                                 </div>
-                                          </div>
+                                            </div>                                                
                                         </div>
-                                      </div>
-
-
                                     </div>
                                 </div>
                                 <div class='modal-footer'>
