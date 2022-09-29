@@ -145,6 +145,16 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
+        'GMCOHCompanyId' => [
+            'required' => 'Id Cant be blank',
+            'min' => 'Id at least  minimum 2 char',
+            'unique'=>'Id already Exists',
+         ],
+         'GMCOHDesc1' => [
+            'required' => 'Description Cant be blank',
+            'max' => 'Max 100 Characters allowed',
+        ],
     ],
 
     /*

@@ -610,110 +610,175 @@
 @section('js_code')
 <script>        
     $(document).ready(function(){
-        // $('#html5-extension3SIS').DataTable( {
-        //     dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
-        //         <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
-        //     buttons: {
-        //     buttons: [
-        //         { extend: 'excel', className: 'btn' },
-        //         { extend: 'print', className: 'btn' }
-        //     ]
-        //     },
-        //     "oLanguage": {
-        //         "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" \
-        //             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" \
-        //             class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5">\
-        //             </polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" \
-        //             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" \
-        //             stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line>\
-        //             <polyline points="12 5 19 12 12 19"></polyline></svg>' },
-        //         "sInfo": "Showing page _PAGE_ of _PAGES_",
-        //         "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-        //         "sSearchPlaceholder": "Search...",
-        //         "sLengthMenu": "Results :  _MENU_",
-        //     },
-        //     stripeClasses: [],
-        //     pageLength: 6,
-        //     lengthMenu: [6, 10, 20, 50],
-        //     order: [ 8, "desc" ],
-        //     processing: true,
-        //     serverSide: true,
-        //     // CopyChange                    
-        //     "ajax": "{{ route('company.browserData')}}",
-        //     "columns":[
-        //         // CopyChange
-        //     {data: "GMCOHCompanyId"},
-        //     {data: "GMCOHDesc1"},
-        //     {data: "GMCOHNickName"},                    
-        //     {data: "GMCOHTagLine"},                    
-        //     {data: "action", orderable:false, searchable: false},
-        //     {data: "GMCOHDesc2", "visible": false},
-        //     {data: "GMCOHBiDesc", "visible": false},
-        //     {data: "GMCOHUser", "visible": false},
-        //     {data: "GMCOHLastUpdated", "visible": false},
-        //     {data: "GMCOHUniqueId", "visible": false},
-        //     ],
-        //     "columnDefs": [
-        //         { "width": "5%", "targets": 0 },
-        //         { "width": "25%", "targets": 1 },
-        //         { "width": "25%", "targets": 2 },
-        //         { "width": "25%", "targets": 3 },
-        //         { "width": "15%", "targets": 4 }
-        //     ]      
-        // });
-            $('#html5-extension3SIS').DataTable( {
-                // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
-                //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
-                buttons: {
-                buttons: [
-                    { extend: 'excel', className: 'btn' },
-                    { extend: 'print', className: 'btn' }
-                ]
-                },
-                "oLanguage": {
-                    "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" \
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" \
-                        class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5">\
-                        </polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" \
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" \
-                        stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line>\
-                        <polyline points="12 5 19 12 12 19"></polyline></svg>' },
-                    "sInfo": "Showing page PAGE of _PAGES_",
-                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
-                    "sSearchPlaceholder": "Search...",
-                    "sLengthMenu": "Results :  _MENU_",
-                },
-                stripeClasses: [],
-                pageLength: 6,
-                lengthMenu: [6, 10, 20, 50],
-                order: [ 8, "desc" ],
-                processing: true,
-                serverSide: true,
-                // CopyChange                    
-                "ajax": "{{ route('company.browserData')}}",
-                "columns":[
-                // CopyChange
-                {data: "GMCOHCompanyId"},
-                {data: "GMCOHDesc1"},
-                {data: "GMCOHNickName"},                    
-                {data: "GMCOHTagLine"},                    
-                {data: "action", orderable:false, searchable: false},
-                {data: "GMCOHDesc2", "visible": false},
-                {data: "GMCOHBiDesc", "visible": false},
-                {data: "GMCOHUser", "visible": false},
-                {data: "GMCOHLastUpdated", "visible": false},
-                {data: "GMCOHUniqueId", "visible": false},
-                ],
-                "columnDefs": [
-                    { "width": "5%", "targets": 0 },
-                    { "width": "25%", "targets": 1 },
-                    { "width": "25%", "targets": 2 },
-                    { "width": "25%", "targets": 3 },
-                    { "width": "15%", "targets": 4 }
-                ]      
-            });
+        $('#html5-extension3SIS').DataTable( {
+            // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
+            //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
+            buttons: {
+            buttons: [
+                { extend: 'excel', className: 'btn' },
+                { extend: 'print', className: 'btn' }
+            ]
+            },
+            "oLanguage": {
+                "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" \
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" \
+                    class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5">\
+                    </polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" \
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" \
+                    stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line>\
+                    <polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                "sInfo": "Showing page PAGE of _PAGES_",
+                "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                "sSearchPlaceholder": "Search...",
+                "sLengthMenu": "Results :  _MENU_",
+            },
+            stripeClasses: [],
+            pageLength: 6,
+            lengthMenu: [6, 10, 20, 50],
+            order: [ 8, "desc" ],
+            processing: true,
+            serverSide: true,
+            // CopyChange                    
+            "ajax": "{{ route('company.browserData')}}",
+            "columns":[
+            // CopyChange
+            {data: "GMCOHCompanyId"},
+            {data: "GMCOHDesc1"},
+            {data: "GMCOHNickName"},                    
+            {data: "GMCOHTagLine"},                    
+            {data: "action", orderable:false, searchable: false},
+            {data: "GMCOHDesc2", "visible": false},
+            {data: "GMCOHBiDesc", "visible": false},
+            {data: "GMCOHUser", "visible": false},
+            {data: "GMCOHLastUpdated", "visible": false},
+            {data: "GMCOHUniqueId", "visible": false},
+            ],
+            "columnDefs": [
+                { "width": "5%", "targets": 0 },
+                { "width": "25%", "targets": 1 },
+                { "width": "25%", "targets": 2 },
+                { "width": "25%", "targets": 3 },
+                { "width": "15%", "targets": 4 }
+            ]      
+        });
 
      }); 
+    // When edit button is pushed
+    $(document).on('click', '.edit', function(){
+            
+        var id = $(this).attr('id');
+        $.ajax({
+            // CopyChange
+            url: "{{route('company.fetchData')}}",
+            method: 'GET',
+            data: {id:id},
+            dataType: 'json',
+            success: function(data)
+            { 
+                // var lastCreated = formattedDate(new Date(data.GMCOHLastCreated));
+                // var lastUpdated = formattedDate(new Date(data.GMCOHLastUpdated));
+                // var establishmentDte = formattedDate(new Date(data.GMCOHESTDate));
+                // General Info
+                $('#GMCOHUniqueId').val(data.GMCOHUniqueId);                     
+                $('#GMCOHCompanyId').val(data.GMCOHCompanyId);
+                $('#GMCOHDesc1').val(data.GMCOHDesc1);
+                $('#GMCOHDesc2').val(data.GMCOHDesc2);
+                $('#GMCOHBiDesc').val(data.GMCOHBiDesc);
+                $('#GMCOHNickName').val(data.GMCOHNickName);
+                $('#GMCOHTagLine').val(data.GMCOHTagLine);
+                $('#GMCOHCurrenyId').val(data.GMCOHCurrenyId);
+                $('#GMCOHDecimalPositionQty').val(data.GMCOHDecimalPositionQty);
+                $('#GMCOHDecimalPositionValue').val(data.GMCOHDecimalPositionValue);
+                $('#GMCOHLandLine').val(data.GMCOHLandLine);
+                $('#GMCOHMobileNo').val(data.GMCOHMobileNo);
+                $('#GMCOHEmail').val(data.GMCOHEmail);
+                $('#GMCOHWebsite').val(data.GMCOHWebsite);
+                // Address Info
+                $('#GMCOHAddress1').val(data.GMCOHAddress1);
+                $('#GMCOHAddress2').val(data.GMCOHAddress2);
+                $('#GMCOHAddress3').val(data.GMCOHAddress3);
+                $('#GMCOHCityId').val(data.GMCOHCityId);
+                $('#GMCOHStateId').val(data.GMCOHStateId);
+                $('#GMCOHCountryId').val(data.GMCOHCountryId);
+                $('#GMCOHPinCode').val(data.GMCOHPinCode);
+                // Statutory and Logo Info
+                $('#GMCOHCINNo').val(data.GMCOHCINNo);
+                $('#GMCOHPANNo').val(data.GMCOHPANNo);
+                $('#GMCOHGSTNo').val(data.GMCOHGSTNo);
+                // $('#GMCOHESTDate').val(establishmentDte);
+                $('#GMCOHFolderName').val(data.GMCOHFolderName);
+                $('#GMCOHImageFileName').val(data.GMCOHImageFileName);
+                // Banking Info
+                $('#GMCOHBankId1').val(data.GMCOHBankId1);
+                $('#GMCOHBranchId1').val(data.GMCOHBranchId1);
+                $('#GMCOHIFSId1').val(data.GMCOHIFSId1);
+                $('#GMCOHBankAccNo1').val(data.GMCOHBankAccNo1);
+                $('#GMCOHBankAcName1').val(data.GMCOHBankAcName1);
+                $('#GMCOHBankId2').val(data.GMCOHBankId2);
+                $('#GMCOHBranchId2').val(data.GMCOHBranchId2);
+                $('#GMCOHIFSId2').val(data.GMCOHIFSId2);
+                $('#GMCOHBankAccNo2').val(data.GMCOHBankAccNo2);
+                $('#GMCOHBankAcName2').val(data.GMCOHBankAcName2);
+                // User Info
+                $('#GMCOHUser').val(data.GMCOHUser);                        
+                // $('#GMCOHLastCreated').val(lastCreated);                        
+                // $('#GMCOHLastUpdated').val(lastUpdated);                         
+                $("#GMCOHCompanyId").attr("readonly", true); 
+                $('#entryModalSmall').modal('show');
+
+                // fnReinstateFormControl('1');
+                // fnUpdateDropdownsEditMode(data);
+            }
+        });
+    });
+    // Edit Ends
+    // When submit button is pushed
+    $('#singleLevelDataEntryForm').on('submit', function(event){               
+        event.preventDefault();
+        $.ajax({
+            url: $(this).attr('action'),
+            method: $(this).attr('method'),
+            data: new FormData(this),
+            processData: false,
+            dataType: "json",
+            contentType: false,
+            beforeSend: function(){
+                $(document).find('span.error-text').text('');
+            },
+            success:function(data)
+            {
+
+                console.log(data);
+
+
+                alert("done");return false;
+                if(data.status == 0)
+                {
+                    $.each(data.error, function(prefix,val){
+                        $('span.' +prefix+ '_error').text(val[0]);
+                        $('#' +prefix).css('border-color', '#dc3545');
+                    });
+                }else
+                { 
+                    $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+                    $('#FinalSaveMessage').html($finalMessage3SIS);
+                    fnReinstateFormControl('0');
+                    $('#html5-extension3SIS').DataTable().ajax.reload();
+                    // if(data.updateMode=='Updated')
+                    // {
+                        alert("success");
+                        $('#entryModalSmall').modal('hide');
+                        // $('#modalZoomFinalSave3SIS').modal('show');
+                    // }
+                    // else
+                    // {
+                    //     $('#form_output').html($finalMessage3SIS);
+                    // }
+                }
+            }
+        })
+    });
+    // Submit Ends 
 
 $('#cityId').change(function(){
             let id = $(this).val();

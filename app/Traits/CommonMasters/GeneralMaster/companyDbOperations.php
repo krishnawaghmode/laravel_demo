@@ -72,7 +72,7 @@ trait companyDbOperations {
         $Company->GMCOHBankAcName2          =   $request->GMCOHBankAcName2;
         
         $Company->GMCOHMarkForDeletion      =   0;
-        $Company->GMCOHUser                 =   Auth::user()->name;
+        // $Company->GMCOHUser                 =   Auth::user()->name;
         $Company->GMCOHLastUpdated          =   Carbon::now();
         $Company->save(); 
         if($request->get('button_action') == 'insert') {
