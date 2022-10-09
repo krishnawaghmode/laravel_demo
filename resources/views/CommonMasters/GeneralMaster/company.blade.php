@@ -206,7 +206,7 @@
                                                                 <label>Currency Id</label>                                                
                                                                 <span class="error-text currenyId_error text-danger" 
                                                                     style='float:right;'></span>
-                                                                <select id='currenyId' name = 'currenyId' style='width: 100%;'>
+                                                                <select id='currenyId' name = 'currenyId' style='width: 100%;' class="form-control select2">
                                                                     <option value=''>-- Select Currency Id --</option>
                                                                     @foreach($currency_list as $currency)
                                                                     <option value='{{$currency->GMCRHUniqueId}}'>{{$currency->GMCRHCurrencyId}}</option>
@@ -794,5 +794,10 @@ $('#cityId').change(function(){
                 }
             })
         });
+</script>
+<script>
+    $('#currenyId,#quantityId,#valueId,#cityId,#branchId1,#branchId2').select2({
+        dropdownParent: $('#entryModalSmall')
+    });
 </script>
 @endsection

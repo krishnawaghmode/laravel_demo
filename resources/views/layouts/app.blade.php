@@ -88,8 +88,12 @@
     <!--  BEGIN CUSTOM SCRIPTS FILE  -->
     <script src="{{asset('assets/js/scrollspyNav.js')}}"></script>
     <script src="{{asset('plugins/select2/select2.min.js')}}"></script>
-    <!-- <script src="{{asset('plugins/select2/custom-select2.js')}}"></script> -->
-    <!--  BEGIN CUSTOM SCRIPTS FILE  -->
+    <script src="{{asset('plugins/select2/custom-select2.js')}}"></script>
+    
+    <script src="{{asset('plugins/bootstrap-maxlength/bootstrap-maxlength.js')}}"></script>
+    <script src="{{asset('plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
+
+    <link href="{{asset('assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
 
     <script>
         $(document).ready(function() {

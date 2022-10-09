@@ -149,4 +149,19 @@ class CompanyController extends Controller
            return response()->json($res);
         }
     }
+
+    //tab design test
+    function Tab()
+    { 
+        // echo 'Data Submitted.11';
+        $data = $this->dataTableXLSchemaTrait();
+        $menu = $this->menu();
+
+        $currency_list = Currency::all();
+        $city_list = City::all();
+        $bank1_list = BankName::all();
+        $bank2_list = BranchName::all();
+
+        return view('CommonMasters.GeneralMaster.tab',compact('menu','currency_list','city_list','bank1_list','bank2_list'))->with($data);
+    }
 }

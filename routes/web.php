@@ -44,3 +44,6 @@ Route::POST('/company/Master/getGeoDesc',[CompanyController::class, 'GetGeoDesc'
 
 Route::post('/city/dropdown',[CompanyController::class, 'getcityStateDropDown'])->name('dropDownMasters.getGeoDesc');
 //Route for Company Master 3SIS Ends
+
+//tab design test 
+Route::get('/tabs', [CompanyController::class, 'Tab']);
