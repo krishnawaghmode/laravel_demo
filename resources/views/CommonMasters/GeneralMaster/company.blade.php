@@ -163,6 +163,7 @@
                                                                     style='float:right;'></span>
                                                                 <input type="text" name='GMCOHDesc1' id="GMCOHDesc1"  maxlength="100"
                                                                     class="form-control few-options" placeholder="Company Name">
+
                                                             </div>
                                                         </div>
                                                         <div class="col-md-2">
@@ -610,6 +611,13 @@
 @section('js_code')
 <script>        
     $(document).ready(function(){
+        $modalTitle = 'Company'
+        // $( "#cityId" ).select2();
+        // $( "#branchId1" ).select2();
+        // $( "#branchId2" ).select2();
+        // // $( "#currenyId" ).select2();
+        // $( "#quantityId" ).select2();
+        // $( "#valueId" ).select2();
         $('#html5-extension3SIS').DataTable( {
             // dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> \
             //     <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
@@ -751,7 +759,7 @@
                 console.log(data);
 
 
-                alert("done");return false;
+                // alert("done");return false;
                 if(data.status == 0)
                 {
                     $.each(data.error, function(prefix,val){
@@ -779,6 +787,71 @@
         })
     });
     // Submit Ends 
+    // When delete button is pushed
+    $(document).on('click', '.delete', function(){
+            var UniqueId = $(this).attr('id');
+            // Fetch Record first that need to be deleted.
+            $.ajax({
+                url: "{{route('company.fetchData')}}",
+                method: 'GET',
+                data: {id:UniqueId},
+                dataType: 'json',
+                success: function(data)
+                {
+                    $deleteMessage3SIS = fnSingleLevelDeleteConfirmation($modalTitle, data.GMCOHCompanyId, '');   
+                    $('#DeleteRecord').html($deleteMessage3SIS);
+                    $('#modalZoomDeleteRecord3SIS').modal('show');                   
+                }
+            });
+            // Fetch Record Ends
+            // Delete record only when OK is pressed on Modal.
+            $(document).on('click', '.confirm', function(){
+                $.ajax({
+                    // CopyChange
+                    url:"{{route('company.deleteData')}}",
+                    mehtod:"get",
+                    data:{id:UniqueId},
+                    success:function(data)
+                    {
+                        $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+                        $('#FinalSaveMessage').html($finalMessage3SIS);                            
+                        $('#html5-extension3SIS').DataTable().ajax.reload();
+                        // $('#html-extension3SIS').DataTable().ajax.reload();
+                        UniqueId = 0;
+                        $('#modalZoomDeleteRecord3SIS').modal('hide');
+                        $('#modalZoomFinalSave3SIS').modal('show');
+                    }
+                })
+            }); 
+            $("#modalZoomDeleteRecord3SIS").on("hide.bs.modal", function () {
+                UniqueId = 0;
+            });                 
+        }); 
+        // Delete Ends
+        // Whed undo button is pushed
+        $('#Undelete_Data').click(function(){                    
+            $('#html-extension3SIS').DataTable( {
+            stripeClasses: [],
+            pageLength: 6,
+            lengthMenu: [6, 10, 20, 50],
+            order: [[ 1, "desc" ]],
+            processing: true,
+            serverSide: true,
+            destroy: true,                    
+            // CopyChange                    
+            "ajax": "{{ route('company.browserDeletedRecords')}}",
+            "columns":[
+                // CopyChange
+                {data: "GMCOHCompanyId"},
+                {data: "GMCOHDesc1"},
+                {data: "GMCOHDesc2"},
+                {data: "action", orderable:false, searchable: false},
+                {data: "GMCOHUniqueId", "visible": false},
+            ]
+            });
+            fnReinstateDataTable('0');
+        });
+        // undo Ends
 
 $('#cityId').change(function(){
             let id = $(this).val();
