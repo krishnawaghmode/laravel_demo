@@ -140,7 +140,7 @@ trait companyDbOperations {
         $Company = Company::find($UniqueId);
         //Eloquent Way
         $Company->GMCOHMarkForDeletion   =   1;
-        $Company->GMCOHUser              =   Auth::user()->name;
+        // $Company->GMCOHUser              =   Auth::user()->name;
         $Company->GMCOHDeletedAt         =  Carbon::now();
         $Company->save();        
         return $Company->GMCOHCompanyId;
