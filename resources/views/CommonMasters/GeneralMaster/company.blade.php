@@ -748,6 +748,9 @@
                 $('#GMCOHEmail').val(data.GMCOHEmail);
                 $('#GMCOHWebsite').val(data.GMCOHWebsite);
 
+
+                // How to pull Id in dropdown in Edit Mode - @Krishna 
+
                 $('#currenyId').val(data.GMCOHCurrenyId).change();
                 $('#cityId').val(data.GMCOHCityId).change();
                 $('#stateDesc1').val(data.GMCOHStateId);
