@@ -94,6 +94,7 @@
     <script src="{{asset('plugins/bootstrap-maxlength/custom-bs-maxlength.js')}}"></script>
 
     <link href="{{asset('assets/css/components/tabs-accordian/custom-tabs.css')}}" rel="stylesheet" type="text/css" />
+    <script src="{{asset('assets/js/common3SIS/validation3SIS.js')}}"></script>
 
     <script>
         $(document).ready(function() {

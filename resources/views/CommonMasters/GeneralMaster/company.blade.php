@@ -734,58 +734,99 @@
                 $("#GMCOHCompanyId").attr("readonly", true); 
                 $('#entryModalSmall').modal('show');
 
-                // fnReinstateFormControl('1');
+                fnReinstateFormControl('1');
                 // fnUpdateDropdownsEditMode(data);
             }
         });
     });
     // Edit Ends
     // When submit button is pushed
+    // $('#singleLevelDataEntryForm').on('submit', function(event){               
+    //     event.preventDefault();
+    //     $.ajax({
+    //         url: $(this).attr('action'),
+    //         method: $(this).attr('method'),
+    //         data: new FormData(this),
+    //         processData: false,
+    //         dataType: "json",
+    //         contentType: false,
+    //         beforeSend: function(){
+    //             $(document).find('span.error-text').text('');
+    //         },
+    //         success:function(data)
+    //         {
+
+    //             console.log(data);
+
+
+    //             // alert("done");return false;
+    //             if(data.status == 0)
+    //             {
+    //                 $.each(data.error, function(prefix,val){
+    //                     $('span.' +prefix+ '_error').text(val[0]);
+    //                     $('#' +prefix).css('border-color', '#dc3545');
+    //                 });
+    //             }else
+    //             { 
+    //                 $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+    //                 $('#FinalSaveMessage').html($finalMessage3SIS);
+    //                 fnReinstateFormControl('0');
+    //                 $('#html5-extension3SIS').DataTable().ajax.reload();
+    //                 // if(data.updateMode=='Updated')
+    //                 // {
+    //                     alert("success");
+    //                     $('#entryModalSmall').modal('hide');
+    //                     // $('#modalZoomFinalSave3SIS').modal('show');
+    //                 // }
+    //                 // else
+    //                 // {
+    //                 //     $('#form_output').html($finalMessage3SIS);
+    //                 // }
+    //             }
+    //         }
+    //     })
+    // });
+    // When submit button is pushed
     $('#singleLevelDataEntryForm').on('submit', function(event){               
-        event.preventDefault();
-        $.ajax({
-            url: $(this).attr('action'),
-            method: $(this).attr('method'),
-            data: new FormData(this),
-            processData: false,
-            dataType: "json",
-            contentType: false,
-            beforeSend: function(){
-                $(document).find('span.error-text').text('');
-            },
-            success:function(data)
-            {
-
-                console.log(data);
-
-
-                // alert("done");return false;
-                if(data.status == 0)
+            event.preventDefault();
+            $.ajax({
+                url: $(this).attr('action'),
+                method: $(this).attr('method'),
+                data: new FormData(this),
+                processData: false,
+                dataType: "json",
+                contentType: false,
+                beforeSend: function(){
+                    $(document).find('span.error-text').text('');
+                },
+                success:function(data)
                 {
-                    $.each(data.error, function(prefix,val){
-                        $('span.' +prefix+ '_error').text(val[0]);
-                        $('#' +prefix).css('border-color', '#dc3545');
-                    });
-                }else
-                { 
-                    $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
-                    $('#FinalSaveMessage').html($finalMessage3SIS);
-                    fnReinstateFormControl('0');
-                    $('#html5-extension3SIS').DataTable().ajax.reload();
-                    // if(data.updateMode=='Updated')
-                    // {
-                        alert("success");
-                        $('#entryModalSmall').modal('hide');
-                        // $('#modalZoomFinalSave3SIS').modal('show');
-                    // }
-                    // else
-                    // {
-                    //     $('#form_output').html($finalMessage3SIS);
-                    // }
+                    if(data.status == 0)
+                    {
+                        $.each(data.error, function(prefix,val){
+                            $('span.' +prefix+ '_error').text(val[0]);
+                            $('#' +prefix).css('border-color', '#dc3545');
+                        });
+                    }else
+                    { 
+                        $finalMessage3SIS = fnSingleLevelFinalSave(data.masterName, data.Id, data.Desc1, data.updateMode);
+                        $('#FinalSaveMessage').html($finalMessage3SIS);
+                        fnReinstateFormControl('0');
+                        $('#html5-extension3SIS').DataTable().ajax.reload();
+                        if(data.updateMode=='Updated')
+                        {
+                            $('#entryModalSmall').modal('hide');
+                            $('#modalZoomFinalSave3SIS').modal('show');
+                        }
+                        else
+                        {
+                            $('#form_output').html($finalMessage3SIS);
+                        }
+                    }
                 }
-            }
-        })
-    });
+            })
+        });
+        // Submit Ends
     // Submit Ends 
     // When delete button is pushed
     $(document).on('click', '.delete', function(){
