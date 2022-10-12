@@ -316,7 +316,7 @@
                                                                     <select id='cityId' name = 'cityId' style='width: 100%;'>
                                                                         <option value=''>-- Select City Id --</option>
                                                                         @foreach($city_list as $city)
-                                                                    <option value='{{$city->GMCTHUniqueId}}'>{{$city->GMCTHDesc1}}</option>
+                                                                    <option value='{{$city->GMCTHCityId}}'>{{$city->GMCTHDesc1}}</option>
                                                                     @endforeach
                                                                     </select>                                                
                                                                 </div>
@@ -675,6 +675,52 @@
     $(document).on('click', '.edit', function(){
             
         var id = $(this).attr('id');
+
+                $('#GMCOHUniqueId').val();                     
+                $('#GMCOHCompanyId').val();
+                $('#GMCOHDesc1').val();
+                $('#GMCOHDesc2').val();
+                $('#GMCOHBiDesc').val();
+                $('#GMCOHNickName').val();
+                $('#GMCOHTagLine').val();
+                $('#GMCOHCurrenyId').val();
+                $('#GMCOHDecimalPositionQty').val();
+                $('#GMCOHDecimalPositionValue').val();
+                $('#GMCOHLandLine').val();
+                $('#GMCOHMobileNo').val();
+                $('#GMCOHEmail').val();
+                $('#GMCOHWebsite').val();
+                // Address Info
+                $('#GMCOHAddress1').val();
+                $('#GMCOHAddress2').val();
+                $('#GMCOHAddress3').val();
+                $('#GMCOHCityId').val();
+                $('#GMCOHStateId').val();
+                $('#GMCOHCountryId').val();
+                $('#GMCOHPinCode').val();
+                // Statutory and Logo Info
+                $('#GMCOHCINNo').val();
+                $('#GMCOHPANNo').val();
+                $('#GMCOHGSTNo').val();
+                // $('#GMCOHESTDate').val(establishmentDte);
+                $('#GMCOHFolderName').val();
+                $('#GMCOHImageFileName').val();
+                // Banking Info
+                $('#GMCOHBankId1').val();
+                $('#GMCOHBranchId1').val();
+                $('#GMCOHIFSId1').val();
+                $('#GMCOHBankAccNo1').val();
+                $('#GMCOHBankAcName1').val();
+                $('#GMCOHBankId2').val();
+                $('#GMCOHBranchId2').val();
+                $('#GMCOHIFSId2').val();
+                $('#GMCOHBankAccNo2').val();
+                $('#GMCOHBankAcName2').val();
+                // User Info
+                $('#GMCOHUser').val();                        
+                // $('#GMCOHLastCreated').val(lastCreated);                        
+                // $('#GMCOHLastUpdated').val(lastUpdated);
+
         $.ajax({
             // CopyChange
             url: "{{route('company.fetchData')}}",
@@ -701,6 +747,17 @@
                 $('#GMCOHMobileNo').val(data.GMCOHMobileNo);
                 $('#GMCOHEmail').val(data.GMCOHEmail);
                 $('#GMCOHWebsite').val(data.GMCOHWebsite);
+
+
+                // How to pull Id in dropdown in Edit Mode - @Krishna 
+
+                $('#currenyId').val(data.GMCOHCurrenyId).change();
+                $('#cityId').val(data.GMCOHCityId).change();
+                $('#stateDesc1').val(data.GMCOHStateId);
+                $('#countryDesc1').val(data.GMCOHCountryId);
+
+                
+
                 // Address Info
                 $('#GMCOHAddress1').val(data.GMCOHAddress1);
                 $('#GMCOHAddress2').val(data.GMCOHAddress2);
