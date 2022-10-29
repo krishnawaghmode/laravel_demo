@@ -162,7 +162,8 @@ trait companyDbOperations {
          //Eloquent Way
          $Company = Company::find($UniqueId);
          $Company->GMCOHMarkForDeletion   =   0;
-         $Company->GMCOHUser               =   Auth::user()->name;
+        //  $Company->GMCOHUser              =   Auth::user()->name;
+         $Company->GMCOHUser              =   '3SIS';
          $Company->GMCOHDeletedAt         =  Null;
          $Company->save();        
          return $Company->GMCOHCompanyId;

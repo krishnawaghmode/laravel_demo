@@ -1,3 +1,15 @@
+$(".modal-dialog").draggable({
+    handle: ".modal-header"
+});
+$(".modal-dialog").draggable({
+    handle: ".modal-header-detail3SIS"
+}); 
+$(".modal-dialog").draggable({
+    handle: ".modal-header-F4List3SIS"
+});    
+
+
+
 $("input.basic").maxlength();
 $("input.threshold").maxlength({
     threshold: 20,

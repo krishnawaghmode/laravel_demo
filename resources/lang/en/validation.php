@@ -155,6 +155,281 @@ return [
             'required' => 'Description Cant be blank',
             'max' => 'Max 100 Characters allowed',
         ],
+        // Skills Master 
+        'CMSKHSkillId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'CMSKHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'CMSKHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'CMSKHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Certificates & Trainting Master 
+        'CMCTHCertificateId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'CMCTHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'CMCTHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'CMCTHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Degree Master 
+        'CMQUHDegreeId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'CMQUHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'CMQUHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'CMQUHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Department Master 
+        'ESDPHDepartmentId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'ESDPHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'ESDPHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'ESDPHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Type Master 
+        'ESTYHTypeId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'ESTYHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'ESTYHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'ESTYHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Grade Master 
+        'ESGRHGradeId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'ESGRHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'ESGRHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'ESGRHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Designation Master 
+        'ESDEHDesignationId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'ESDEHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'ESDEHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'ESDEHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],      
+        // Salutation Master 
+        'GMSLHSalutationId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMSLHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMSLHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMSLHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],      
+        // Gender Master 
+        'GMGDHGenderId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMGDHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMGDHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMGDHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Blood Group Master 
+        'GMBGHBloodGroupId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMBGHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMBGHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMBGHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Nationality Master 
+        'GMNAHNationalityId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMNAHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMNAHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMNAHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Race Master 
+        'GMRAHRaceId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMRAHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMRAHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMRAHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+         // Region Master 
+        'GMRLHReligionId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMRLHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMRLHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMRLHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],       
+        // MaritalStatus Master 
+        'GMMSHMaritalStatusId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMMSHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMMSHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMMSHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // PhysicalStatus Master 
+        'GMPSHPhysicalStatusId' => [
+            'required' => 'Id Cant be blank',
+            'max' => 'Max 10 Characters allowed',
+            'unique'=>'Id already Exists',
+         ],
+         'GMPSHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMPSHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMPSHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],        
+        // Currency Master 
+        'GMCRHCurrencyId' => [
+            'required' => 'Id Cant be blank',
+            'min' => 'Id at least 2 characters',
+            'unique'=>'Id already Exists',
+         ],
+         'GMCRHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMCRHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMCRHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
+        // Company Master 
+        'GMCOHCompanyId' => [
+            'required' => 'Id Cant be blank',
+            'min' => 'Id at least  minimum 2 char',
+            'unique'=>'Id already Exists',
+         ],
+         'currenyId' => [
+            'required' => 'Currency Cant be blank',
+        ],
+         'GMCOHDesc1' => [
+             'required' => 'Description Cant be blank',
+             'max' => 'Max 100 Characters allowed',
+         ],
+         'GMCOHDesc2' => [
+             'max' => 'Max 200 Characters allowed',
+         ],
+         'GMCOHBiDesc' => [
+             'max' => 'Max 100 Characters allowed',
+         ],
     ],
 
     /*
