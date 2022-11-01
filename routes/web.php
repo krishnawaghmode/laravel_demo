@@ -27,7 +27,15 @@ use App\Http\Controllers\Payroll\EmployeeStatus\TypeController;
 // Payroll Employee Status Ends*****
 use App\Http\Controllers\SalesForce\SalesAutomationController;
 
-Route::get('/', [DashboardController::class,'index']);
+Route::get('/', function () {
+    return view('first');
+});
+
+Route::get('/login', function () {
+    return view('auth/login');
+});
+
+// Route::get('/', [DashboardController::class,'index']);
 Route::get('/fastpath', [DashboardController::class,'FastPath']);
 
 
@@ -36,9 +44,7 @@ Route::post('/current_url', [DashboardController::class,'current_url']);
 Route::get('/test_table', [DashboardController::class,'test']);
 
 
-Route::get('/login', function () {
-    return view('auth/login');
-});
+
 
 
 Route::get('/table', function () {
