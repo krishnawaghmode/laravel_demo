@@ -63,7 +63,7 @@
     <div class="card border">
       <div class="card-body">
         <!-- <h5 class="card-title">Fiexed Asset </h5> -->
-        <h4><a href="http://localhost/test/test_1" >Fiexed Asset</a></h4>
+        <h4><a href="http://localhost/project/project2" >Fiexed Asset</a></h4>
       </div>
     </div>
   </div>
