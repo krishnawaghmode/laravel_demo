@@ -26,13 +26,26 @@ use App\Http\Controllers\Payroll\EmployeeStatus\GradeController;
 use App\Http\Controllers\Payroll\EmployeeStatus\TypeController;
 // Payroll Employee Status Ends*****
 use App\Http\Controllers\SalesForce\SalesAutomationController;
+use App\Http\Controllers\AuthController;
+
 
 Route::get('/', function () {
     return view('first');
 });
 
-Route::get('/login', function () {
-    return view('auth/login');
+// Route::group(['middleware'=>'guest'],function(){
+    Route::get('login',[AuthController::class,'index'])->name('login');
+    Route::post('login',[AuthController::class,'login'])->name('login')->middleware('throttle:2,1');
+
+    // Route::get('register',[AuthController::class,'register_view'])->name('register');
+    // Route::post('register',[AuthController::class,'register'])->name('register')->middleware('throttle:2,1');
+// });
+
+
+
+Route::group(['middleware'=>'auth'],function(){
+    Route::get('/company/index', [CompanyController::class, 'Index']);
+    Route::get('logout',[AuthController::class,'logout'])->name('logout');
 });
 
 // Route::get('/', [DashboardController::class,'index']);
@@ -60,7 +73,7 @@ Route::get('/new/index', [DashboardController::class,'tabform']);
 
 
 //Route for Company Master 3SIS
-Route::get('/company/index', [CompanyController::class, 'Index']);
+// Route::get('/company/index', [CompanyController::class, 'Index']);
 Route::GET('/company/Master',[CompanyController::class, 'BrowserData'])->name('company.browserData');
 Route::GET('/company/Master/Update',[CompanyController::class, 'FetchData'])->name('company.fetchData');
 Route::POST('/company/Master/Add',[CompanyController::class, 'PostData'])->name('company.postData');
